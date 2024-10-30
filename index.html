@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* From Uiverse.io by aguerquin */ 
+.button-icon {
+    display: flex;
+    border: 3px #fff solid;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+  
+  .icon {
+    background-color: #fff;
+    padding: 10px 10px 5px 10px;
+  }
+  
+  .icon svg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .cube {
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 20px;
+  }
+  
+  .button-icon:hover {
+    border-color: #ff98a2;
+  }
+  
+  .button-icon:hover .cube {
+    transform: rotateX(90deg);
+  }
+  
+  .side {
+    position: absolute;
+    height: 47px;
+    width: 200px;
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+  
+  .top {
+    background: #ff98a2;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+  }
+  
+  .front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 1em);
+  }
+  
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="button-icon" id="myBtn">
+  <div class="icon">
+      <img src="https://media.tenor.com/c5HaEnWzTIgAAAAM/peach-goma-peach.gif" alt="A cool GIF">
+  </div>
+  <div class="cube">
+    <span class="side front">hover me</span>
+    <span class="side top">Click me now!</span>
+  </div>
+</div>
+
+
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+     <img src="https://media.tenor.com/iP9Jm4-D1PEAAAAM/peluk.gif" alt="A cool GIF">
+     <h1>My Princess 👑👸🏼</h1>
+  </div>
+</div>
+
+<script>
+document.getElementById('myBtn').onclick = function() {
+    document.getElementById('myModal').style.display = "block";
+}
+
+document.querySelector('.close').onclick = function() {
+    document.getElementById('myModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('myModal')) {
+        document.getElementById('myModal').style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
